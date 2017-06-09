@@ -1,0 +1,20 @@
+<div id="favorites-container">
+	<md-content>	
+		<div ng-hide="favorites.length">
+			<h1>You currently have no favorites</h1> 
+			<p>(Go post find something amazing and change that!)</p>
+		</div>
+		<div ng-if="favorites.length">
+			<h1>Favorites:</h1>
+			<md-card ng-repeat="favorite in favorites">
+				<md-card-content layout="column" layout-align="space-between">
+					<div>
+						<img class="favorites-thumbnail" ng-src="/images/{{favorite.file_name}}" ng-click="goToPhoto(favorite, $event)">
+						<span>Date: {{favorite.date_time | date}}</span>
+						<md-button class="md-raised md-primary" ng-click="removePhoto(favorite)">Remove from favorites</md-button>
+					</div>
+				</md-card-content>
+			</md-card>
+		</div>
+	</md-content>
+</div>

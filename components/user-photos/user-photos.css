@@ -1,0 +1,18 @@
+div {
+	display: block;
+	padding-left: 10px;
+}
+
+md-button {
+	max-width: 15%;
+}
+
+.user-img {
+	max-width:100%;
+	max-height:100%;
+}
+
+ul.dropdown-menu.scrollable-menu {
+	background-color: black;
+	color: white;
+}

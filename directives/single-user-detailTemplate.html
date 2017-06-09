@@ -1,0 +1,5 @@
+<!--  must be provided a user object in $scope -->
+<h1>{{user.first_name + " " + user.last_name}}</h1>
+<p>Description: {{user.description}}</p>
+<p>Occumpation: {{user.occupation}}</p>
+<md-button class='md-raised md-primary' ng-href='#!/photos/{{user._id}}'>See my photos</md-button>

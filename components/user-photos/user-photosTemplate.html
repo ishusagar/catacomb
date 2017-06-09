@@ -1,0 +1,41 @@
+<md-content>
+	<h1>{{user.first_name}} {{user.last_name}}</h1>
+
+	<!-- photos -->
+	<md-card ng-repeat="photo in userPhotos | orderBy:'date_time'" id="{{photo._id}}">
+		<md-card-content layout="column" layout-align="space-between">
+			<div>
+				<img class="user-img" ng-src="/images/{{photo.file_name}}">
+				<p>Created: {{photo.date_time | date}}</p>
+			</div>
+			<!-- add it to your favorite -->
+			<md-button class='md-raised md-primary' ng-click='addToFavorites(photo)'>{{setFavoriteButtonText(photo)}}</md-button>
+			<!-- comments -->
+			<md-list>
+				<md-list-item ng-repeat="comment in photo.comments | orderBy:'date_time'">
+					<a ng-href='#!/users/{{comment.user._id}}'>{{comment.user.first_name}} {{comment.user.last_name}}</a>
+					<div>Posted: {{comment.date_time | date}}</div>
+					<div class="comment-text">{{comment.comment}}</div>
+				</md-list-item>
+			</md-list>
+		</md-card-content>
+		<!-- comment input -->
+		<form name="userForm" ng-submit='submitComment(comment_submission, photo)'>
+			<md-input-container>
+				<label>Comment</label>
+				<input type="text" mentio 
+				mentio-typed-text="typedTerm" 
+				mentio-items="people | filter:label:typedTerm" 
+				mentio-select="storeSelectedMention(item)" 
+				name="comment_submission" 
+				ng-model="comment_submission" 
+				required  minlength="1">
+				<div ng-messages="userForm.login_name.$error" ng-show="userForm.login_name.$dirty">
+					<div ng-message="minlength">That's too short!</div>
+				</div>
+				<md-button class='md-raised md-primary' ng-click='submitComment(comment_submission, photo)'>Post comment</md-button>
+			</md-input-container>
+		</form>
+	</md-card>
+
+</md-content>

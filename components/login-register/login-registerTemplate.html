@@ -1,0 +1,107 @@
+<h1>{{title}}</h1>
+
+<form name="userForm" ng-submit="submitForm()"> 
+	<!-- Login Name field -->
+	<md-input-container>
+		<label>Login Name</label>
+		<input name="login_name" ng-model="userSchema.login_name" required md-maxlength="10" minlength="4" autofocus autocomplete="off">
+		<div ng-messages="userForm.login_name.$error" ng-show="userForm.login_name.$dirty">
+			<div ng-message="required">This is required!</div>
+			<div ng-message="md-maxlength">That's too long!</div>
+			<div ng-message="minlength">That's too short!</div>
+		</div>
+	</md-input-container>
+	<br>
+
+	<!-- Password1 field -->
+	<md-input-container>
+		<label>Password</label>
+		<input type="password" name="password" ng-model="userSchema.password" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+		<div ng-messages="userForm.password.$error" ng-show="userForm.password.$dirty">
+			<div ng-message="required">This is required!</div>
+			<div ng-message="md-maxlength">That's too long!</div>
+			<div ng-message="minlength">That's too short!</div>
+		</div>
+	</md-input-container>
+	<br>
+
+	<div ng-show="showRegistration"> <!-- hidden unless registering a new user -->
+		<!-- Password2 field: utilizes comapre-to directive to compare w/ password -->
+		<md-input-container>
+			<label>Confirm Password</label>
+			<input type="password" name="password_confirm" ng-model="userSchema.password_confirm" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+			<div ng-messages="userForm.password_confirm.$error" ng-show="userForm.password_confirm.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="md-maxlength">That's too long!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<br>
+
+		<!-- First name field -->
+		<md-input-container>
+			<label>First Name</label>
+			<input name="first_name" ng-model="userSchema.first_name" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+			<div ng-messages="userForm.first_name.$error" ng-show="userForm.first_name.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="md-maxlength">That's too long!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<br>
+
+		<!-- Last name field -->
+		<md-input-container>
+			<label>Last Name</label>
+			<input name="last_name" ng-model="userSchema.last_name" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+			<div ng-messages="userForm.last_name.$error" ng-show="userForm.last_name.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="md-maxlength">That's too long!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<br>
+
+		<!-- Location field -->
+		<md-input-container>
+			<label>Location</label>
+			<input name="location" ng-model="userSchema.location" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+			<div ng-messages="userForm.location.$error" ng-show="userForm.location.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="md-maxlength">That's too long!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<br>	
+
+		<!-- Description field -->
+		<md-input-container>
+			<label>Description</label>
+			<input name="description" ng-model="userSchema.description" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+			<div ng-messages="userForm.description.$error" ng-show="userForm.description.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="md-maxlength">That's too long!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<br>	
+
+		<!-- Occupation field -->
+		<md-input-container>
+			<label>Occupation</label>
+			<input name="occupation" ng-model="userSchema.occupation" required md-maxlength="20" minlength="4" autofocus autocomplete="off">
+			<div ng-messages="userForm.occupation.$error" ng-show="userForm.occupation.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="md-maxlength">That's too long!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<br>	
+	</div> <!-- end registration inputs -->
+
+	<!-- Login button -->
+	<md-button class='md-raised md-primary' ng-click='submitForm()'>Log me in!</md-button>
+	<!-- Register button -->
+	<md-button ng-show="!showRegistration" class='md-raised md-primary' ng-click='isRegistration()'>Register</md-button>
+
+</form>

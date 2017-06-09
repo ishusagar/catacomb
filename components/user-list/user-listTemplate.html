@@ -1,0 +1,12 @@
+<div>
+	<md-content>
+	<h1>Users: </h1>
+		<md-list flex>
+			<md-list-item ng-repeat="user in userListModel">
+				<md-button ng-href="#!/users/{{user._id}}">
+					{{main.getFullName(user)}}
+				</md-button>
+			</md-list-item>
+		</md-list>
+	</md-content>
+</div>

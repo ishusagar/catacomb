@@ -1,0 +1,33 @@
+/*#toolbar-left {
+	float: left;
+}
+
+#toolbar-right {
+	float: right;
+}
+
+#logout-button {
+	float: right;
+}*/
+
+#toolbar span {
+	padding: 15px;
+	float: right;
+}
+
+#toolbar a {
+	padding: 15px;
+	float: right;
+}
+
+.toolbar-clickable {
+	border: 2px solid black;
+}
+
+.toolbar-clickable:hover {
+	color: black;
+}
+
+#blue-md-button {
+	background-color: #03A9F4;
+}

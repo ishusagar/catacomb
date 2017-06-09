@@ -1,0 +1,17 @@
+<div ng-controller="UserDetailController">
+	<md-content>	
+		<single-user-detail></single-user-detail>
+		<div ng-if="mentions.length">
+			<h1>Mentions: </h1>
+			<md-card ng-repeat="mention in mentions">
+				<md-card-content layout="column" layout-align="space-between">
+					<div>
+						<img class="user-detail-thumbnail" ng-src="/images/{{mention.photo_file_name}}" ng-click="goToPhoto(mention)">
+						<br><a ng-href="#!/users/{{mention.comment_author_id}}">{{mention.comment_author_full_name}}</a>
+						<span> {{mention.comment_body}} </span>
+					</div>
+				</md-card-content>
+			</md-card>
+		</div>
+	</md-content>
+</div>
