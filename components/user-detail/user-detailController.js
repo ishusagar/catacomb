@@ -1,6 +1,6 @@
 'use strict';
 
-cs142App.controller('UserDetailController', ['$scope', '$routeParams', '$resource', '$location',
+catacomb.controller('UserDetailController', ['$scope', '$routeParams', '$resource', '$location',
 	function ($scope, $routeParams, $resource, $location) {
 		var userId = $routeParams.userId;
 		var usersResObj = $resource("/user/:id");

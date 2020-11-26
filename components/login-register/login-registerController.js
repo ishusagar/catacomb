@@ -1,8 +1,8 @@
 'use strict';
 
-cs142App.controller('LoginRegisterController', ['$scope', '$routeParams', '$resource', '$location', '$rootScope',
+catacomb.controller('LoginRegisterController', ['$scope', '$routeParams', '$resource', '$location', '$rootScope',
 	function ($scope, $routeParams, $resource, $location, $rootScope) {
-		$scope.title = "Time to login, homie!";	
+		$scope.title = "Welcome to CataComb🌵 !";	
 		$scope.main.title = "";
 		$scope.showRegistration = false;
 		$scope.isRegistration   = function() {

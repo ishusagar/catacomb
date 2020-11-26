@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app="cs142App" ng-controller="MainController">
+<html ng-app="catacomb" ng-controller="MainController">
 <head>
-
-    <title>{{main.title || "CS142 Class Project"}}</title>
+    <link rel="icon" href="c2.png" type="image/icon type">
+    <title>CataComb</title>
 
     <link href="./node_modules/angular-material/angular-material.css" rel="stylesheet" />
     
@@ -36,19 +36,22 @@
 
 </head>
 
-<body layout="column">
+<body layout="column" style="background-color: rgb(0, 21, 41);">
 
-    <md-toolbar id="toolbar" layout="row">
-        <span id="toolbar-left">David Mora</span>
-        <span class="toolbar-clickable" ng-show="main.login_name" ng-click="main.logout()">Logout</span>
-        <span class="toolbar-clickable" ng-show="main.login_name" ng-click="uploadPhoto()">Add Photo</span>
-        <span class="toolbar-clickable" ng-show="main.login_name" ng-click="main.goToFavorites()">Favorites</span>
-        <span id="toolbar-right">{{main.title}}</span>
-        <span ng-show="main.login_name">Logged in as: {{main.login_name}}</span>
+    <md-toolbar id="toolbar" layout="row" style="padding: 0px 50px;background: rgb(0, 21, 41);">
+        <span id="toolbar-left">🌵CataComb - Your Private Space! </span>
+        
+            <a style="color: white;text-decoration: none;" ng-show="main.login_name" href="#!/users/{{main.user_id}}">{{main.title}}</a>
+            <span class="toolbar-clickable" ng-show="main.login_name" ng-click="uploadPhoto()">Upload Files</span>
+            <span class="toolbar-clickable" ng-show="main.login_name" ng-click="main.goToFavorites()">Favorites</span>
+            <a style="color: white;text-decoration: none;" ng-show="main.login_name" href="build_encr_decr/index.html">Encrypt & Upload</a>
+            <a style="color: white;text-decoration: none;" ng-show="main.login_name" href="build_encr_decr/index.html">Decrypt & Download</a>
+            <span class="toolbar-clickable" ng-show="main.login_name" ng-click="main.logout()">Logout ({{main.login_name}})</span>
+            
     </md-toolbar>
     
     <input ng-if="main.letUserChooseFile" type="file" accept="image/*"  onchange="angular.element(this).scope().inputFileNameChanged(this)">
-    <md-button ng-if="main.letUserChooseFile" id='blue-md-button' class='md-raised md-primary' ng-click='uploadPhoto()'>Upload Photo</md-button>
+    <md-button ng-if="main.letUserChooseFile" id='blue-md-button' class='md-raised md-primary' ng-click='uploadPhoto()'>Upload Files</md-button>
 
 
     <div class="container" flex layout="row">

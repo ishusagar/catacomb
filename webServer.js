@@ -50,7 +50,7 @@ var app         = express();
 
 
 
-mongoose.connect('mongodb://localhost/cs142project6');
+mongoose.connect('mongodb://localhost/catacomb');
 
 // We have the express static module (http://expressjs.com/en/starter/static-files.html) do all
 // the work for us.

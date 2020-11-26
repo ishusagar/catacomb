@@ -6,7 +6,7 @@
 
 
     "globals": { // Globals variables.
-        "cs142App": true,
+        "catacomb": true,
         "angular": true,
         "browser": true,
         "element": true,

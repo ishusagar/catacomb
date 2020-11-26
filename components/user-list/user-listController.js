@@ -1,6 +1,6 @@
 'use strict';
 
-cs142App.controller('UserListController', ['$scope', '$resource', '$location',
+catacomb.controller('UserListController', ['$scope', '$resource', '$location',
 	function ($scope, $resource, $location) {
 		if ($location.path() === "/users") {
 			$scope.main.title = 'Users';

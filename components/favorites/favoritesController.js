@@ -1,6 +1,6 @@
 'use strict';
 
-cs142App.controller('FavoritesController', ['$scope', '$resource', '$mdDialog',
+catacomb.controller('FavoritesController', ['$scope', '$resource', '$mdDialog',
 	function ($scope, $resource, $mdDialog) {
 
 		// retrieve user favorites (if any)

@@ -1,9 +1,9 @@
 'use strict';
 
-var cs142App = angular.module('cs142App', ['ngResource', 'ngRoute', 'ngMaterial', 'ngMessages', 'mentio']);
+var catacomb = angular.module('catacomb', ['ngResource', 'ngRoute', 'ngMaterial', 'ngMessages', 'mentio']);
 
 
-cs142App
+catacomb
 .config(['$routeProvider',
 	function ($routeProvider) {
 		$routeProvider

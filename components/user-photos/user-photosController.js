@@ -1,6 +1,6 @@
 'use strict';
 
-cs142App.controller('UserPhotosController', ['$scope', '$routeParams', '$resource', '$location', '$anchorScroll',
+catacomb.controller('UserPhotosController', ['$scope', '$routeParams', '$resource', '$location', '$anchorScroll',
 	function($scope, $routeParams, $resource, $location, $anchorScroll) {  
 
     // mentio
@@ -15,7 +15,7 @@ cs142App.controller('UserPhotosController', ['$scope', '$routeParams', '$resourc
     var userId = $routeParams.userId;
     var UserResObj = $resource("/user/:id");
     $scope.user = UserResObj.get({id: userId}, function(user) {
-    	$scope.main.title = "Photos of " + $scope.main.getFullName($scope.user);
+    	$scope.main.title = "Files of " + $scope.main.getFullName($scope.user);
     }); 
 
     var PhotosResObj = $resource("/photosOfUser/:id");  
